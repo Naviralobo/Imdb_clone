@@ -32,11 +32,9 @@ async function searchMovies() {
       ` https://www.omdbapi.com/?i=tt3896198&apikey=6d7b886b&type=movie&s=${query}`
     );
     const data = await response.json();
-    if (data.Search) {
-      displaySearchResults(data.Search);
-    } else {
-      searcResults.innerHTML = `<p>No results found</p>`;
-    }
+    if (data.Search) displaySearchResults(data.Search);
+    else if (data.Error)
+      searcResults.innerHTML = `<p style="color:gray"> No results found</p>`;
   } catch (err) {
     console.log(err);
   }
