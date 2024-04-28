@@ -29,7 +29,7 @@ async function searchMovies() {
   }
   try {
     const response = await fetch(
-      ` http://www.omdbapi.com/?i=tt3896198&apikey=6d7b886b&type=movie&s=${query}`
+      ` https://www.omdbapi.com/?i=tt3896198&apikey=6d7b886b&type=movie&s=${query}`
     );
     const data = await response.json();
     if (data.Search) {
@@ -125,7 +125,7 @@ async function displaySelectedMovieDetails() {
 async function getSelectedMovie(imdbID) {
   try {
     const response = await fetch(
-      `http://www.omdbapi.com/?i=${imdbID}&apikey=6d7b886b`
+      `https://www.omdbapi.com/?i=${imdbID}&apikey=6d7b886b`
     );
     const data = await response.json();
     return data;
